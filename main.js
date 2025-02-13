@@ -32,7 +32,7 @@ wrapper.innerHTML = `<h1>hello world</h1>`;
 
 
 let date = new Date();
-// let formatDate = date.toLocaleDateString();
+let formatDate = date.toLocaleDateString();
 
 
 
@@ -44,12 +44,17 @@ pubblica_tutto.addEventListener( `click`, ()=>{
         alert(`Titolo o Articolo vuoti`);
 
     } else {
+
+               // *** correggo con videosoluzione ***
+        // wrapper.innerHTML = `<h1>${titolo.value}</h1>`;
         
-        wrapper.innerHTML = `<h1>${titolo.value}</h1>`;
+        // wrapper.innerHTML += `<p>${articolo.value}</p>`;
         
-        wrapper.innerHTML += `<p>${articolo.value}</p>`;
-        
-        wrapper.innerHTML +=  `<p>${date}</p>`;
+        // wrapper.innerHTML +=  `<p>${date}</p>`;
+
+        let articolo_completo = document.createElement(`articolo_completo`);
+        articolo_completo.innerHTML = `<h1>${titolo.value}</h1> <p>${articolo.value}</p> <p>${formatDate}</p>`;
+        wrapper.appendChild(articolo_completo);
 
         titolo.value = ``;
 
@@ -61,10 +66,6 @@ pubblica_tutto.addEventListener( `click`, ()=>{
 } );
 
 
-
-
-// min 53:00
-// min 1:21:00
 
 
 console.dir(titolo);
